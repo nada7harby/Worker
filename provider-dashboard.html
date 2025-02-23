@@ -1,0 +1,1411 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة تحكم مقدم الخدمة - منصة خدمات العمالة</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/provider/dashboard.css" />
+  </head>
+  <body class="dashboard-body">
+    <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">
+          <img src="images/logo.svg" alt="شعار المنصة" height="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto ">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">خدماتنا</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./workers.html">العمالة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">عن المنصة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Contact-Us.html">اتصل بنا</a>
+            </li>
+          </ul>
+        
+          <div class="nav-buttons">
+            <a href="./provider-dashboard.html" class="btn btn-outline-primary me-2">
+              <i class="fas fa-tachometer-alt"></i> لوحة التحكم
+            </a>
+            <a href="./login.html" class="btn btn-outline-primary me-2">تسجيل الدخول</a>
+            <a href="./register.html" class="btn btn-primary">إنشاء حساب</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+    <div class="dashboard-sidebar">
+      <div class="sidebar-header">
+        <i class="fas fa-building"></i>
+        <h3>لوحة تحكم المكتب</h3>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="" data-target="overview">
+          <a href="#overview"><i class="fas fa-home"></i> الرئيسية</a>
+        </li>
+        <li data-target="workers">
+          <a href="#workers"><i class="fas fa-users"></i> العمالة</a>
+        </li>
+        <li data-target="requests">
+          <a href="#requests"><i class="fas fa-tasks"></i> الطلبات</a>
+        </li>
+        <li data-target="messages">
+          <a href="#messages"><i class="fas fa-envelope"></i> الرسائل</a>
+        </li>
+        <li data-target="reviews">
+          <a href="#reviews" onclick="showReviews()">
+            <i class="fas fa-star"></i> التقييمات
+          </a>
+        </li>
+        <li data-target="reports">
+          <a href="#reports"><i class="fas fa-chart-bar"></i> التقارير</a>
+        </li>
+        <li data-target="settings">
+          <a href="#settings"><i class="fas fa-cog"></i> الإعدادات</a>
+        </li>
+        <li>
+          <a href="#" onclick="logout()"
+            ><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dashboard-main">
+      <!-- Navbar -->
+      <nav class="dashboard-nav" >
+        <div class="nav-left">
+          <button class="toggle-sidebar" >
+            <i class="fas fa-bars"></i>
+          </button>
+          <!-- <div class="search-box">
+            <input type="text" placeholder="بحث..." />
+            <i class="fas fa-search"></i>
+          </div> -->
+        </div>
+        
+        <div class="nav-right">
+          
+          <div class="user-menu">
+            <!-- <img src="images/logo.svg" alt="شعار المكتب" /> -->
+            <span class="user-name">مكتب الخليج للتوظيف</span>
+          </div>
+          <div class="notifications">
+            <i class="fas fa-bell"></i>
+            <span class="badge">5</span>
+          </div>
+        </div>
+       
+        
+      </nav>
+
+      <!-- Content -->
+      <div class="dashboard-content">
+        <!-- Overview Section -->
+        <div class="content-section" id="overview">
+          <h2>لوحة المعلومات</h2>
+          <div class="stats-cards">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-users"></i>
+              </div>
+              <div class="stat-info">
+                <h3>150</h3>
+                <p>العمالة المتوفرة</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="stat-info">
+                <h3>25</h3>
+                <p>الطلبات الجديدة</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="stat-info">
+                <h3>85</h3>
+                <p>الطلبات المكتملة</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <div class="stat-info">
+                <h3>4.8</h3>
+                <p>متوسط التقييم</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick Actions -->
+          <div class="quick-actions mb-4">
+            <h3>إجراءات سريعة</h3>
+            <div class="row g-3">
+              <div class="col-md-3">
+                <button class="btn btn-primary w-100" onclick="addNewWorker()">
+                  <i class="fas fa-plus"></i> إضافة عامل جديد
+                </button>
+              </div>
+              <div class="col-md-3">
+                <button
+                  class="btn btn-success w-100"
+                  onclick="viewNewRequests()"
+                >
+                  <i class="fas fa-list"></i> عرض الطلبات الجديدة
+                </button>
+              </div>
+              <div class="col-md-3">
+                <button class="btn btn-info w-100" onclick="exportReport()">
+                  <i class="fas fa-file-export"></i> تصدير تقرير
+                </button>
+              </div>
+              <div class="col-md-3">
+                <button
+                  class="btn btn-warning w-100"
+                  onclick="manageSettings()"
+                >
+                  <i class="fas fa-cog"></i> إعدادات المكتب
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activities -->
+          <div class="recent-activities">
+            <h3>آخر النشاطات</h3>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>النشاط</th>
+                    <th>التفاصيل</th>
+                    <th>التاريخ</th>
+                    <th>الحالة</th>
+                  </tr>
+                </thead>
+                <tbody id="activitiesTable">
+                  <!-- سيتم ملء هذا الجزء ديناميكياً -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Workers Management Section -->
+        <div class="content-section" id="workers" style="display: none;">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>إدارة العمالة</h2>
+            <button
+              class="btn btn-primary"
+              data-bs-toggle="modal"
+              data-bs-target="#addWorkerModal"
+            >
+              <i class="fas fa-plus"></i> إضافة عامل جديد
+            </button>
+          </div>
+
+          <!-- Workers Filter -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-3">
+                  <label class="form-label">الجنسية</label>
+                  <select class="form-select" id="nationalityFilter">
+                    <option value="">الكل</option>
+                    <option value="مصري">مصري</option>
+                    <option value="فلبيني">فلبيني</option>
+                    <option value="هندي">هندي</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">المهنة</label>
+                  <select class="form-select" id="professionFilter">
+                    <option value="">الكل</option>
+                    <option value="سائق">سائق</option>
+                    <option value="عاملة منزلية">عاملة منزلية</option>
+                    <option value="طباخ">طباخ</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">الحالة</label>
+                  <select class="form-select" id="statusFilter">
+                    <option value="">الكل</option>
+                    <option value="متاح">متاح</option>
+                    <option value="مشغول">مشغول</option>
+                    <option value="في إجازة">في إجازة</option>
+                  </select>
+                </div>
+                <div class="col-md-3">
+                  <label class="form-label">الخبرة</label>
+                  <select class="form-select" id="experienceFilter">
+                    <option value="">الكل</option>
+                    <option value="0-2">0-2 سنوات</option>
+                    <option value="3-5">3-5 سنوات</option>
+                    <option value="5+">أكثر من 5 سنوات</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Workers Grid -->
+          <div class="workers-management-grid">
+            <div class="row g-4" id="workersGrid">
+              <!-- سيتم ملء هذا القسم ديناميكياً -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Add Worker Modal -->
+        <div class="modal fade" id="addWorkerModal" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">إضافة عامل جديد</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="addWorkerForm">
+                  <div class="row g-3">
+                    <!-- المعلومات الشخصية -->
+                    <div class="col-md-6">
+                      <label class="form-label">الاسم بالكامل</label>
+                      <input type="text" class="form-control" required />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">الجنسية</label>
+                      <select class="form-select" required>
+                        <option value="">اختر الجنسية</option>
+                        <option value="مصري">مصري</option>
+                        <option value="فلبيني">فلبيني</option>
+                        <option value="هندي">هندي</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">تاريخ الميلاد</label>
+                      <input type="date" class="form-control" required />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">رقم الجواز</label>
+                      <input type="text" class="form-control" required />
+                    </div>
+
+                    <!-- المعلومات المهنية -->
+                    <div class="col-md-6">
+                      <label class="form-label">المهنة</label>
+                      <select class="form-select" required>
+                        <option value="">اختر المهنة</option>
+                        <option value="سائق">سائق</option>
+                        <option value="عاملة منزلية">عاملة منزلية</option>
+                        <option value="طباخ">طباخ</option>
+                      </select>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">سنوات الخبرة</label>
+                      <input type="number" class="form-control" required />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">الراتب المتوقع</label>
+                      <input type="number" class="form-control" required />
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label">اللغات</label>
+                      <select class="form-select" multiple>
+                        <option value="العربية">العربية</option>
+                        <option value="الإنجليزية">الإنجليزية</option>
+                        <option value="الأوردو">الأوردو</option>
+                      </select>
+                    </div>
+
+                    <!-- المستندات -->
+                    <div class="col-12">
+                      <label class="form-label">صورة شخصية</label>
+                      <input
+                        type="file"
+                        class="form-control"
+                        accept="image/*"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">صورة الجواز</label>
+                      <input
+                        type="file"
+                        class="form-control"
+                        accept="image/*"
+                        required
+                      />
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">شهادات الخبرة</label>
+                      <input
+                        type="file"
+                        class="form-control"
+                        accept=".pdf,.doc,.docx"
+                        multiple
+                      />
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  إلغاء
+                </button>
+                <button
+                  type="submit"
+                  form="addWorkerForm"
+                  class="btn btn-primary"
+                >
+                  حفظ
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Requests Management Section -->
+        <div class="content-section" id="requests" style="display: none;">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>إدارة الطلبات</h2>
+            <div class="d-flex gap-2">
+              <button
+                class="btn btn-outline-primary"
+                onclick="exportRequests()"
+              >
+                <i class="fas fa-file-export"></i> تصدير التقرير
+              </button>
+              <div class="btn-group">
+                <button
+                  class="btn btn-primary dropdown-toggle"
+                  data-bs-toggle="dropdown"
+                >
+                  <i class="fas fa-filter"></i> تصفية حسب
+                </button>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterRequests('all')"
+                      >الكل</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterRequests('pending')"
+                      >قيد الانتظار</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterRequests('processing')"
+                      >قيد المعالجة</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterRequests('completed')"
+                      >مكتملة</a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      class="dropdown-item"
+                      href="#"
+                      onclick="filterRequests('cancelled')"
+                      >ملغاة</a
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- Requests Table -->
+          <div class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>رقم الطلب</th>
+                      <th>العميل</th>
+                      <th>نوع الخدمة</th>
+                      <th>العامل</th>
+                      <th>تاريخ الطلب</th>
+                      <th>الحالة</th>
+                      <th>الإجراءات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="requestsTableBody">
+                    <!-- سيتم ملء هذا الجزء ديناميكياً -->
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- Pagination -->
+              <nav class="mt-3">
+                <ul
+                  class="pagination justify-content-center"
+                  id="requestsPagination"
+                >
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">السابق</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">التالي</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!-- الرسائل -->
+        <div class="content-section" id="messages" style="display: none;">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>الرسائل</h2>
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary" onclick="composeMessage()">
+                <i class="fas fa-plus"></i> رسالة جديدة
+              </button>
+              <button
+                class="btn btn-outline-primary"
+                onclick="refreshMessages()"
+              >
+                <i class="fas fa-sync"></i> تحديث
+              </button>
+            </div>
+          </div>
+
+          <!-- فلترة الرسائل -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label class="form-label">تصفية حسب النوع</label>
+                  <select class="form-select" id="messageTypeFilter">
+                    <option value="all">الكل</option>
+                    <option value="inbox">الوارد</option>
+                    <option value="sent">المرسلة</option>
+                    <option value="draft">المسودة</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">تصفية حسب التاريخ</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="messageDateFilter"
+                  />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">بحث</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="messageSearch"
+                    placeholder="ابحث في الرسائل..."
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- قائمة الرسائل -->
+          <div class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>المرسل</th>
+                      <th>الموضوع</th>
+                      <th>التاريخ</th>
+                      <th>الحالة</th>
+                      <th>الإجراءات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="messagesTableBody">
+                    <!-- سيتم ملء هذا الجزء ديناميكياً -->
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- ترقيم الصفحات -->
+              <nav class="mt-3">
+                <ul
+                  class="pagination justify-content-center"
+                  id="messagesPagination"
+                >
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">السابق</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">التالي</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <!-- Reviews Section -->
+<div class="content-section" id="reviews" style="display: none;">
+  <h2>التقييمات</h2>
+  <div class="stats-cards">
+    <!-- إحصائيات سريعة -->
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fas fa-star"></i>
+      </div>
+      <div class="stat-info">
+        <h3>4.8</h3>
+        <p>متوسط التقييم</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fas fa-comments"></i>
+      </div>
+      <div class="stat-info">
+        <h3>120</h3>
+        <p>عدد التقييمات</p>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon">
+        <i class="fas fa-thumbs-up"></i>
+      </div>
+      <div class="stat-info">
+        <h3>95%</h3>
+        <p>رضا العملاء</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- قائمة التقييمات -->
+  <div class="recent-activities">
+    <h3>آخر التقييمات</h3>
+    <div class="table-responsive">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>العميل</th>
+            <th>التقييم</th>
+            <th>التعليق</th>
+            <th>التاريخ</th>
+          </tr>
+        </thead>
+        <tbody id="reviewsTable">
+          <!-- سيتم ملء هذا الجزء ديناميكياً -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+        <!-- مودال إنشاء رسالة جديدة -->
+        <div class="modal fade" id="composeMessageModal" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">رسالة جديدة</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form id="composeMessageForm">
+                  <div class="mb-3">
+                    <label class="form-label">إلى</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="أدخل اسم المستلم أو البريد الإلكتروني"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">الموضوع</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="أدخل موضوع الرسالة"
+                      required
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">الرسالة</label>
+                    <textarea
+                      class="form-control"
+                      rows="5"
+                      placeholder="أدخل محتوى الرسالة"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="mb-3">
+                    <label class="form-label">المرفقات</label>
+                    <input
+                      type="file"
+                      class="form-control"
+                      multiple
+                      accept=".pdf,.doc,.docx,.jpg,.png"
+                    />
+                  </div>
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  إغلاق
+                </button>
+                <button
+                  type="submit"
+                  form="composeMessageForm"
+                  class="btn btn-primary"
+                >
+                  إرسال
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Request Details Modal -->
+        <div class="modal fade" id="requestDetailsModal" tabindex="-1">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title">
+                  تفاصيل الطلب #<span id="requestNumber"></span>
+                </h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="row">
+                  <!-- معلومات العميل -->
+                  <div class="col-md-6">
+                    <h6>معلومات العميل</h6>
+                    <div class="mb-3">
+                      <label class="fw-bold">الاسم:</label>
+                      <span id="clientName"></span>
+                    </div>
+                    <div class="mb-3">
+                      <label class="fw-bold">رقم الجوال:</label>
+                      <span id="clientPhone"></span>
+                    </div>
+                    <div class="mb-3">
+                      <label class="fw-bold">العنوان:</label>
+                      <span id="clientAddress"></span>
+                    </div>
+                  </div>
+
+                  <!-- تفاصيل الطلب -->
+                  <div class="col-md-6">
+                    <h6>تفاصيل الطلب</h6>
+                    <div class="mb-3">
+                      <label class="fw-bold">نوع الخدمة:</label>
+                      <span id="serviceType"></span>
+                    </div>
+                    <div class="mb-3">
+                      <label class="fw-bold">تاريخ البدء:</label>
+                      <span id="startDate"></span>
+                    </div>
+                    <div class="mb-3">
+                      <label class="fw-bold">المدة:</label>
+                      <span id="duration"></span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- تحديث الحالة -->
+                <div class="mt-4">
+                  <h6>تحديث الحالة</h6>
+                  <select class="form-select" id="statusUpdate">
+                    <option value="pending">قيد الانتظار</option>
+                    <option value="processing">قيد المعالجة</option>
+                    <option value="completed">مكتمل</option>
+                    <option value="cancelled">ملغي</option>
+                  </select>
+                </div>
+
+                <!-- ملاحظات -->
+                <div class="mt-3">
+                  <h6>إضافة ملاحظة</h6>
+                  <textarea
+                    class="form-control"
+                    id="requestNote"
+                    rows="3"
+                  ></textarea>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  إغلاق
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="updateRequestStatus()"
+                >
+                  حفظ التغييرات
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reports Section -->
+        <div class="content-section" id="reports" style="display: none;">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>التقارير والإحصائيات</h2>
+            <div class="d-flex gap-2">
+              <div class="input-group" style="width: 200px;">
+                <input type="month" class="form-control" id="reportMonth" />
+                <button
+                  class="btn btn-primary"
+                  onclick="generateMonthlyReport()"
+                >
+                  <i class="fas fa-sync"></i>
+                </button>
+              </div>
+              <button class="btn btn-success" onclick="exportReport()">
+                <i class="fas fa-file-export"></i> تصدير
+              </button>
+            </div>
+          </div>
+
+          <!-- Statistics Cards -->
+          <div class="row g-4 mb-4">
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h6 class="card-subtitle mb-2 text-muted">
+                        إجمالي الإيرادات
+                      </h6>
+                      <h3 class="card-title mb-0" id="totalRevenue">
+                        25,000 ريال
+                      </h3>
+                    </div>
+                    <i class="fas fa-money-bill-wave text-success fa-2x"></i>
+                  </div>
+                  <div class="mt-3">
+                    <small class="text-success">
+                      <i class="fas fa-arrow-up"></i> 15% مقارنة بالشهر السابق
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h6 class="card-subtitle mb-2 text-muted">
+                        الطلبات المكتملة
+                      </h6>
+                      <h3 class="card-title mb-0" id="completedRequests">85</h3>
+                    </div>
+                    <i class="fas fa-check-circle text-primary fa-2x"></i>
+                  </div>
+                  <div class="mt-3">
+                    <small class="text-success">
+                      <i class="fas fa-arrow-up"></i> 8% مقارنة بالشهر السابق
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h6 class="card-subtitle mb-2 text-muted">
+                        متوسط التقييم
+                      </h6>
+                      <h3 class="card-title mb-0" id="averageRating">4.8</h3>
+                    </div>
+                    <i class="fas fa-star text-warning fa-2x"></i>
+                  </div>
+                  <div class="mt-3">
+                    <small class="text-success">
+                      <i class="fas fa-arrow-up"></i> 0.2 مقارنة بالشهر السابق
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card">
+                <div class="card-body">
+                  <div
+                    class="d-flex justify-content-between align-items-center"
+                  >
+                    <div>
+                      <h6 class="card-subtitle mb-2 text-muted">
+                        العمالة النشطة
+                      </h6>
+                      <h3 class="card-title mb-0" id="activeWorkers">42</h3>
+                    </div>
+                    <i class="fas fa-users text-info fa-2x"></i>
+                  </div>
+                  <div class="mt-3">
+                    <small class="text-danger">
+                      <i class="fas fa-arrow-down"></i> 3% مقارنة بالشهر السابق
+                    </small>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Row -->
+          <div class="row g-4 mb-4">
+            <div class="col-md-8">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">الإيرادات الشهرية</h5>
+                  <canvas id="revenueChart"></canvas>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">توزيع الخدمات</h5>
+                  <canvas id="servicesChart"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Top Workers Table -->
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">أفضل العمال أداءً</h5>
+              <div class="table-responsive">
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th>العامل</th>
+                      <th>المهنة</th>
+                      <th>عدد الطلبات</th>
+                      <th>التقييم</th>
+                      <th>الإيرادات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="topWorkersTable">
+                    <!-- سيتم ملء هذا الجزء ديناميكياً -->
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Settings Section -->
+        <div class="content-section" id="settings" style="display: none;">
+          <h2 class="mb-4">الإعدادات</h2>
+
+          <!-- Settings Tabs -->
+          <ul class="nav nav-tabs mb-4" role="tablist">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                data-bs-toggle="tab"
+                href="#profile-settings"
+              >
+                <i class="fas fa-building"></i> الملف الشخصي للمكتب
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                href="#security-settings"
+              >
+                <i class="fas fa-shield-alt"></i> الأمان
+              </a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                data-bs-toggle="tab"
+                href="#notification-settings"
+              >
+                <i class="fas fa-bell"></i> الإشعارات
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="tab" href="#payment-settings">
+                <i class="fas fa-credit-card"></i> المدفوعات
+              </a>
+            </li>
+          </ul>
+
+          <!-- Settings Content -->
+          <div class="tab-content">
+            <!-- Profile Settings -->
+            <div class="tab-pane fade show active" id="profile-settings">
+              <div class="card">
+                <div class="card-body">
+                  <form id="profileSettingsForm">
+                    <div class="row g-4">
+                      <!-- معلومات المكتب الأساسية -->
+                      <div class="col-md-6">
+                        <label class="form-label">اسم المكتب</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="مكتب الخليج للتوظيف"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">رقم السجل التجاري</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="1234567890"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">البريد الإلكتروني</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          value="info@gulf-recruitment.com"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">رقم الجوال</label>
+                        <input
+                          type="tel"
+                          class="form-control"
+                          value="0501234567"
+                        />
+                      </div>
+
+                      <!-- العنوان -->
+                      <div class="col-md-12">
+                        <label class="form-label">العنوان</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="الرياض - شارع الملك فهد"
+                        />
+                      </div>
+
+                      <!-- الوصف -->
+                      <div class="col-md-12">
+                        <label class="form-label">نبذة عن المكتب</label>
+                        <textarea class="form-control" rows="4">
+نحن مكتب متخصص في توفير خدمات التوظيف والعمالة المنزلية بخبرة تزيد عن 15 عاماً...</textarea
+                        >
+                      </div>
+
+                      <!-- شعار المكتب -->
+                      <div class="col-md-12">
+                        <label class="form-label">شعار المكتب</label>
+                        <div class="d-flex align-items-center gap-3">
+                          <img
+                            src="images/company-logo.jpg"
+                            alt="شعار المكتب"
+                            class="rounded"
+                            style="
+                              width: 100px;
+                              height: 100px;
+                              object-fit: cover;
+                            "
+                          />
+                          <div>
+                            <input
+                              type="file"
+                              class="form-control"
+                              accept="image/*"
+                            />
+                            <small class="text-muted"
+                              >الحد الأقصى للحجم: 2 ميجابايت</small
+                            >
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- مواقع التواصل الاجتماعي -->
+                      <div class="col-md-6">
+                        <label class="form-label">حساب تويتر</label>
+                        <input
+                          type="url"
+                          class="form-control"
+                          placeholder="https://twitter.com/..."
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">حساب انستغرام</label>
+                        <input
+                          type="url"
+                          class="form-control"
+                          placeholder="https://instagram.com/..."
+                        />
+                      </div>
+
+                      <!-- زر الحفظ -->
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-primary">
+                          <i class="fas fa-save"></i> حفظ التغييرات
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Security Settings -->
+            <div class="tab-pane fade" id="security-settings">
+              <div class="card">
+                <div class="card-body">
+                  <form id="securitySettingsForm">
+                    <!-- تغيير كلمة المرور -->
+                    <div class="mb-4">
+                      <h5>تغيير كلمة المرور</h5>
+                      <div class="row g-3">
+                        <div class="col-md-4">
+                          <label class="form-label">كلمة المرور الحالية</label>
+                          <input type="password" class="form-control" />
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label">كلمة المرور الجديدة</label>
+                          <input type="password" class="form-control" />
+                        </div>
+                        <div class="col-md-4">
+                          <label class="form-label">تأكيد كلمة المرور</label>
+                          <input type="password" class="form-control" />
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- التحقق بخطوتين -->
+                    <div class="mb-4">
+                      <h5>التحقق بخطوتين</h5>
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="twoFactorAuth"
+                        />
+                        <label class="form-check-label" for="twoFactorAuth">
+                          تفعيل التحقق بخطوتين
+                        </label>
+                      </div>
+                      <small class="text-muted d-block mt-2">
+                        سيتم إرسال رمز التحقق إلى جوالك عند تسجيل الدخول
+                      </small>
+                    </div>
+
+                    <!-- زر الحفظ -->
+                    <button type="submit" class="btn btn-primary">
+                      <i class="fas fa-save"></i> حفظ التغييرات
+                    </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Notification Settings -->
+            <div class="tab-pane fade" id="notification-settings">
+              <div class="card">
+                <div class="card-body">
+                  <form id="notificationSettingsForm">
+                    <div class="row g-4">
+                      <div class="col-md-12">
+                        <h5>إعدادات الإشعارات</h5>
+                        <div class="form-check mb-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="emailNotifications"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="emailNotifications"
+                          >
+                            إشعارات البريد الإلكتروني
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="smsNotifications"
+                            checked
+                          />
+                          <label
+                            class="form-check-label"
+                            for="smsNotifications"
+                          >
+                            إشعارات الرسائل النصية
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="whatsappNotifications"
+                          />
+                          <label
+                            class="form-check-label"
+                            for="whatsappNotifications"
+                          >
+                            إشعارات الواتساب
+                          </label>
+                        </div>
+                      </div>
+
+                      <!-- نوع الإشعارات -->
+                      <div class="col-md-12">
+                        <h5>نوع الإشعارات</h5>
+                        <div class="form-check mb-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="newRequests"
+                            checked
+                          />
+                          <label class="form-check-label" for="newRequests">
+                            الطلبات الجديدة
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="requestUpdates"
+                            checked
+                          />
+                          <label class="form-check-label" for="requestUpdates">
+                            تحديثات الطلبات
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="payments"
+                            checked
+                          />
+                          <label class="form-check-label" for="payments">
+                            المدفوعات والفواتير
+                          </label>
+                        </div>
+                      </div>
+
+                      <!-- زر الحفظ -->
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-primary">
+                          <i class="fas fa-save"></i> حفظ التغييرات
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Payment Settings -->
+            <div class="tab-pane fade" id="payment-settings">
+              <div class="card">
+                <div class="card-body">
+                  <form id="paymentSettingsForm">
+                    <!-- معلومات الحساب البنكي -->
+                    <div class="row g-4">
+                      <div class="col-md-6">
+                        <label class="form-label">اسم البنك</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="البنك الأهلي السعودي"
+                        />
+                      </div>
+                      <div class="col-md-6">
+                        <label class="form-label">رقم الحساب (IBAN)</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="SA0380000000608010167519"
+                        />
+                      </div>
+                      <div class="col-md-12">
+                        <label class="form-label">اسم صاحب الحساب</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          value="مكتب الخليج للتوظيف"
+                        />
+                      </div>
+
+                      <!-- طرق الدفع المقبولة -->
+                      <div class="col-md-12">
+                        <h5>طرق الدفع المقبولة</h5>
+                        <div class="form-check mb-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="bankTransfer"
+                            checked
+                          />
+                          <label class="form-check-label" for="bankTransfer">
+                            تحويل بنكي
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="creditCard"
+                            checked
+                          />
+                          <label class="form-check-label" for="creditCard">
+                            بطاقة ائتمان
+                          </label>
+                        </div>
+                        <div class="form-check mb-3">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="mada"
+                            checked
+                          />
+                          <label class="form-check-label" for="mada">
+                            مدى
+                          </label>
+                        </div>
+                      </div>
+
+                      <!-- زر الحفظ -->
+                      <div class="col-12">
+                        <button type="submit" class="btn btn-primary">
+                          <i class="fas fa-save"></i> حفظ التغييرات
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <!-- مكتبة Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- مكتبة Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- الملفات المحلية -->
+    <!-- <script src="js/linkHandler.js"></script> -->
+    <script src="js/provider-dashboard.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

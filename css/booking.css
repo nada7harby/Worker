@@ -1,0 +1,178 @@
+/* Booking Section */
+.booking-section {
+  padding: 120px 0 60px;
+}
+
+/* Worker Summary Card */
+.worker-summary {
+  position: sticky;
+  top: 100px;
+  border: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.worker-image {
+  width: 100%;
+  aspect-ratio: 1;
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.worker-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.worker-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 15px;
+  color: var(--dark-color);
+}
+
+.worker-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #666;
+}
+
+.meta-item i {
+  width: 30px;
+  height: 30px;
+  background: var(--light-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+}
+
+/* Booking Form */
+.booking-form {
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+  color: var(--dark-color);
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--light-color);
+  color: var(--dark-color);
+}
+
+/* Cost Summary */
+.cost-summary {
+  background: var(--light-color);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.cost-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.cost-item:last-child {
+  border-bottom: none;
+}
+
+.cost-item.total {
+  font-weight: 600;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+/* Form Controls */
+.form-control,
+.form-select {
+  padding: 12px;
+  border-color: #e0e0e0;
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(41, 98, 255, 0.1);
+}
+
+/* Terms Checkbox */
+.form-check-input:checked {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.form-check-label a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.form-check-label a:hover {
+  text-decoration: underline;
+}
+
+/* Submit Button */
+.btn-primary {
+  padding: 12px 30px;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(41, 98, 255, 0.2);
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .worker-summary {
+    position: static;
+    margin-bottom: 30px;
+  }
+
+  .booking-section {
+    padding: 100px 0 40px;
+  }
+
+  .cost-summary {
+    margin-top: 20px;
+  }
+}
+
+.form-control {
+  margin-right: 10px; /* إضافة مسافة 10px إلى اليمين */
+  margin-bottom: 10px; /* إضافة مسافة 10px إلى الأسفل */
+}
+.info-item {
+  padding: 10px; /* إضافة مسافة 10px حول العنصر */
+}
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* إضافة مسافة 20px بين العناصر */
+}

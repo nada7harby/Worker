@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>منصة خدمات العمالة المنزلية</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+
+    <!-- Bootstrap RTL -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+    />
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- AOS Animation -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Page Specific CSS -->
+    <!-- <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/footer.css"> -->
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.svg" alt="شعار المنصة" height="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="./index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#services">خدماتنا</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./workers.html">العمالة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">عن المنصة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Contact-Us.html">اتصل بنا</a>
+            </li>
+          </ul>
+
+          <div class="nav-buttons">
+            <!-- إضافة أيقونة لوحة التحكم -->
+            <a href="./client-dashboard.html" class="btn btn-outline-primary me-2">
+              <i class="fas fa-tachometer-alt"></i> لوحة التحكم
+            </a>
+            <a href="./login.html" class="btn btn-outline-primary me-2"
+              >تسجيل الدخول</a
+            >
+            <a href="./register.html" class="btn btn-primary">إنشاء حساب</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
+      <div class="hero-waves">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#ffffff"
+            fill-opacity="1"
+            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6" data-aos="fade-up">
+            <h1 class="hero-title">
+              ابحث عن <span class="text-primary">العمالة المنزلية</span>
+              بكل سهولة وأمان
+            </h1>
+            <p class="hero-subtitle">
+              نوفر لك أفضل العمالة المنزلية المدربة والموثوقة مع ضمان حقوق جميع
+              الأطراف
+            </p>
+            <div class="hero-search">
+              <form class="search-form">
+                <div class="row g-2">
+                  <div class="col-md-5">
+                    <select class="form-select">
+                      <option selected>نوع الخدمة</option>
+                      <option>سائق خاص</option>
+                      <option>عاملة منزلية</option>
+                      <option>طباخ/طباخة</option>
+                      <option>مربية أطفال</option>
+                    </select>
+                  </div>
+                  <div class="col-md-5">
+                    <select class="form-select">
+                      <option selected>الجنسية</option>
+                      <option>الفلبين</option>
+                      <option>الهند</option>
+                      <option>مصر</option>
+                      <option>أوغندا</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2">
+                    <a href="./workers.html" class="btn btn-primary w-100">
+                      <i class="fas fa-search"></i>
+                    </a>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-6" data-aos="fade-left">
+            <img
+              src="images/At the office-pana.png"
+              alt="صورة توضيحية"
+              class="hero-image"
+              style="width: 83%"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2>خدماتنا</h2>
+          <p>نقدم مجموعة متنوعة من الخدمات المنزلية لتلبية احتياجاتك</p>
+        </div>
+
+        <div class="row g-4">
+          <!-- Service Card 1 -->
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-car"></i>
+              </div>
+              <h3>سائق خاص</h3>
+              <p>سائقين محترفين ذوي خبرة في القيادة والتعامل</p>
+              <a
+                href="workers.html?service=driver"
+                class="btn btn-outline-primary"
+                >عرض السائقين</a
+              >
+            </div>
+          </div>
+
+          <!-- Service Card 2 -->
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="200"
+          >
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-home"></i>
+              </div>
+              <h3>عاملة منزلية</h3>
+              <p>عاملات منزليات مدربات على أعلى مستوى</p>
+              <a
+                href="workers.html?service=maid"
+                class="btn btn-outline-primary"
+                >عرض العاملات</a
+              >
+            </div>
+          </div>
+
+          <!-- Service Card 3 -->
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="300"
+          >
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-utensils"></i>
+              </div>
+              <h3>طباخ/طباخة</h3>
+              <p>طباخين محترفين في مختلف أنواع المطابخ</p>
+              <a
+                href="workers.html?service=cook"
+                class="btn btn-outline-primary"
+                >عرض الطباخين</a
+              >
+            </div>
+          </div>
+
+          <!-- Service Card 4 -->
+          <div
+            class="col-md-6 col-lg-3"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-baby"></i>
+              </div>
+              <h3>مربية أطفال</h3>
+              <p>مربيات متخصصات في رعاية وتربية الأطفال</p>
+              <a
+                href="workers.html?service=nanny"
+                class="btn btn-outline-primary"
+                >عرض المربيات</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2>لماذا تختارنا؟</h2>
+          <p>نقدم لك مجموعة من المميزات الفريدة</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3>ضمان وأمان</h3>
+              <p>نضمن حقوق جميع الأطراف ونوفر عقود قانونية موثقة</p>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-clock"></i>
+              </div>
+              <h3>سرعة التوفير</h3>
+              <p>نوفر العمالة المطلوبة خلال فترة قصيرة</p>
+            </div>
+          </div>
+
+          <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <h3>دعم متواصل</h3>
+              <p>فريق دعم متخصص متواجد على مدار الساعة</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works-section">
+      <div class="container">
+        <div class="section-header text-center" data-aos="fade-up">
+          <h2>كيف تعمل المنصة؟</h2>
+          <p>خطوات بسيطة للحصول على الخدمة</p>
+        </div>
+
+        <div class="steps-wrapper">
+          <div class="step" data-aos="fade-up" data-aos-delay="100">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>إنشاء حساب</h3>
+              <p>قم بإنشاء حساب جديد وأكمل بياناتك الشخصية</p>
+            </div>
+          </div>
+
+          <div class="step" data-aos="fade-up" data-aos-delay="200">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>اختيار الخدمة</h3>
+              <p>اختر نوع الخدمة والمواصفات المطلوبة</p>
+            </div>
+          </div>
+
+          <div class="step" data-aos="fade-up" data-aos-delay="300">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>تقديم الطلب</h3>
+              <p>قم بتقديم طلب الخدمة وانتظر الموافقة</p>
+            </div>
+          </div>
+
+          <div class="step" data-aos="fade-up" data-aos-delay="400">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>استلام الخدمة</h3>
+              <p>استلم الخدمة واستمتع بتجربة مميزة</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="footer-waves">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#f8f9fa"
+            fill-opacity="1"
+            d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"
+          ></path>
+        </svg>
+      </div>
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-4">
+            <div class="footer-about">
+              <img
+                src="images/logo.svg"
+                alt="شعار المنصة"
+                class="footer-logo"
+              />
+              <p>
+                منصة متخصصة في توفير خدمات العمالة المنزلية بطريقة آمنة وموثوقة
+              </p>
+              <div class="social-links">
+                <a href="#" class="social-link"
+                  ><i class="fab fa-facebook-f"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-twitter"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a href="#" class="social-link"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-2">
+            <h4>روابط سريعة</h4>
+            <ul class="footer-links">
+              <li><a href="./index.html">الرئيسية</a></li>
+              <li><a href="index.html#services">خدماتنا</a></li>
+              <li><a href="#about">عن المنصة</a></li>
+              <li><a href="#contact">اتصل بنا</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3">
+            <h4>خدمات المنصة</h4>
+            <ul class="footer-links">
+              <li><a href="#">سائق خاص</a></li>
+              <li><a href="#">عاملة منزلية</a></li>
+              <li><a href="#">طباخ/طباخة</a></li>
+              <li><a href="#">مربية أطفال</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-3">
+            <h4>تواصل معنا</h4>
+            <ul class="footer-contact">
+              <li>
+                <i class="fas fa-map-marker-alt"></i>
+                <span>الرياض، المملكة العربية السعودية</span>
+              </li>
+              <li>
+                <i class="fas fa-phone"></i>
+                <span>+966 50 123 4567</span>
+              </li>
+              <li>
+                <i class="fas fa-envelope"></i>
+                <span>info@example.com</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="copyright">
+                جميع الحقوق محفوظة &copy; 2024 منصة خدمات العمالة
+              </p>
+            </div>
+            <div class="col-md-6">
+              <ul class="footer-bottom-links">
+                <li><a href="#">سياسة الخصوصية</a></li>
+                <li><a href="#">الشروط والأحكام</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top">
+      <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        offset: 100,
+        once: true,
+      });
+    </script>
+    <!-- <script src="js/linkHandler.js"></script> -->
+
+    <!-- Page Specific Scripts -->
+    <script src="js/search.js"></script>
+    <!-- <script src="js/home.js"></script> -->
+    <script src="js/workers.js"></script>
+    <!-- <script src="js/notifications.js"></script> -->
+    <!-- <script src="js/main.js"></script> -->
+  </body>
+</html>

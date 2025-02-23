@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>تأكيد الحجز - منصة خدمات العمالة</title>
+
+    <!-- Bootstrap RTL -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/confirmation.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.svg" alt="شعار المنصة" height="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="./index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#services">خدماتنا</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./workers.html">العمالة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">عن المنصة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Contact-Us.html">اتصل بنا</a>
+            </li>
+          </ul>
+
+          <div class="nav-buttons">
+            <!-- إضافة أيقونة لوحة التحكم -->
+            <a href="./client-dashboard.html" class="btn btn-outline-primary me-2">
+              <i class="fas fa-tachometer-alt"></i> لوحة التحكم
+            </a>
+            <a href="./login.html" class="btn btn-outline-primary me-2"
+              >تسجيل الدخول</a
+            >
+            <a href="./register.html" class="btn btn-primary">إنشاء حساب</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="confirmation-section">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="confirmation-card">
+              <!-- أيقونة النجاح -->
+              <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+
+              <!-- رسالة النجاح -->
+              <h2>تم تأكيد الحجز بنجاح!</h2>
+              <p class="success-message">
+                شكراً لك على الثقة. سيتم التواصل معك قريباً لإتمام الإجراءات.
+              </p>
+
+              <!-- تفاصيل الطلب -->
+              <div class="order-details">
+                <h4>تفاصيل الطلب</h4>
+                <div class="details-grid">
+                  <div class="detail-item">
+                    <span class="label">رقم الطلب:</span>
+                    <span class="value" id="orderNumber"></span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="label">تاريخ الطلب:</span>
+                    <span class="value" id="orderDate"></span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="label">العامل:</span>
+                    <span class="value" id="workerName"></span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="label">مدة العقد:</span>
+                    <span class="value" id="contractDuration"></span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="label">تاريخ البدء:</span>
+                    <span class="value" id="startDate"></span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="label">المبلغ المدفوع:</span>
+                    <span class="value" id="paidAmount"></span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- الخطوات التالية -->
+              <div class="next-steps mt-5">
+                <h4>الخطوات التالية</h4>
+                <div class="steps-list">
+                  <div class="step-item">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                      <h5>استلام تأكيد بالبريد الإلكتروني</h5>
+                      <p>سيصلك بريد إلكتروني يحتوي على تفاصيل طلبك</p>
+                    </div>
+                  </div>
+                  <div class="step-item">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                      <h5>مراجعة المستندات</h5>
+                      <p>سيتم التواصل معك لمراجعة وتجهيز المستندات المطلوبة</p>
+                    </div>
+                  </div>
+                  <div class="step-item">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                      <h5>توقيع العقد</h5>
+                      <p>تحديد موعد لتوقيع العقد وإتمام الإجراءات</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- أزرار التحكم -->
+              <div class="control-buttons">
+                <a href="./client-dashboard.html" class="btn btn-primary">
+                  <i class="fas fa-home"></i> الذهاب للوحة التحكم
+                </a>
+                <button
+                  class="btn btn-outline-primary"
+                  onclick="printConfirmation()"
+                  aria-label="طباعة التأكيد"
+                >
+                  <i class="fas fa-print"></i> طباعة التأكيد
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/confirmation.js"></script>
+    <script src="js/linkHandler.js"></script>
+  </body>
+</html>

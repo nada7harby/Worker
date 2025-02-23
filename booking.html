@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الحجز - منصة خدمات العمالة</title>
+    
+    <!-- Bootstrap RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/booking.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="index.html">
+            <img src="images/logo.svg" alt="شعار المنصة" height="40" />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+  
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item">
+                <a class="nav-link " href="./index.html">الرئيسية</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html#services">خدماتنا</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./workers.html">العمالة</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./about.html">عن المنصة</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="./Contact-Us.html">اتصل بنا</a>
+              </li>
+            </ul>
+  
+            <div class="nav-buttons">
+              <!-- إضافة أيقونة لوحة التحكم -->
+              <a href="./client-dashboard.html" class="btn btn-outline-primary me-2">
+                <i class="fas fa-tachometer-alt"></i> لوحة التحكم
+              </a>
+              <a href="./login.html" class="btn btn-outline-primary me-2"
+                >تسجيل الدخول</a
+              >
+              <a href="./register.html" class="btn btn-primary">إنشاء حساب</a>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+    <div class="booking-section">
+        <div class="container">
+            <div class="row">
+                <!-- تفاصيل العامل -->
+                <div class="col-md-4">
+                    <div class="worker-summary card">
+                        <div class="worker-image">
+                            <img src="images/avatar.jpg" alt="" id="workerImage">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="worker-name" id="workerName"></h5>
+                            <div class="worker-meta">
+                                <div class="meta-item">
+                                    <i class="fas fa-flag"></i>
+                                    <span id="workerNationality">
+                                      الجنسية : اثيوبيا
+                                    </span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-briefcase"></i>
+                                    <span id="workerExperience">
+                                        الخبرة : +5
+                                    </span>
+                                </div>
+                                <div class="meta-item">
+                                    <i class="fas fa-money-bill"></i>
+                                    <span id="workerSalary">
+                                        العملة : ريال
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- نموذج الحجز -->
+                <div class="col-md-8">
+                    <div class="booking-form card">
+                        <div class="card-body">
+                            <h3 class="card-title">إتمام الحجز</h3>
+                            <form id="bookingForm">
+                                <!-- معلومات العقد -->
+                                <div class="section-title">معلومات العقد</div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">تاريخ بداية العقد</label>
+                                        <input type="date" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">مدة العقد</label>
+                                        <select class="form-select" required>
+                                            <option value="">اختر المدة</option>
+                                            <option value="3">3 أشهر</option>
+                                            <option value="6">6 أشهر</option>
+                                            <option value="12">سنة</option>
+                                            <option value="24">سنتين</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <!-- معلومات مقدم الطلب -->
+                                <div class="section-title mt-4">معلومات مقدم الطلب</div>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label class="form-label">الاسم الكامل</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">رقم الهوية</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">رقم الجوال</label>
+                                        <input type="tel" class="form-control" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label class="form-label">البريد الإلكتروني</label>
+                                        <input type="email" class="form-control" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label class="form-label">العنوان</label>
+                                        <textarea class="form-control" rows="3" required></textarea>
+                                    </div>
+                                </div>
+
+                                <!-- ملخص التكاليف -->
+                                <div class="section-title mt-4">ملخص التكاليف</div>
+                                <div class="cost-summary">
+                                    <div class="cost-item">
+                                        <span>الراتب الشهري</span>
+                                        <span id="monthlySalary">2500 ريال</span>
+                                    </div>
+                                    <div class="cost-item">
+                                        <span>رسوم الخدمة</span>
+                                        <span>500 ريال</span>
+                                    </div>
+                                    <div class="cost-item">
+                                        <span>التأمين</span>
+                                        <span>200 ريال</span>
+                                    </div>
+                                    <div class="cost-item total">
+                                        <span>الإجمالي</span>
+                                        <span id="totalCost">3200 ريال</span>
+                                    </div>
+                                </div>
+
+                                <!-- الموافقة على الشروط -->
+                                <div class="form-check mt-4">
+                                    <input type="checkbox" class="form-check-input" id="termsCheck" required>
+                                    <label class="form-check-label" for="termsCheck">
+                                        أوافق على <a href="#">الشروط والأحكام</a>
+                                    </label>
+                                </div>
+
+                                <!-- زر التأكيد -->
+                                <button type="submit" class="btn btn-primary w-100 mt-4">
+                                    تأكيد الحجز ومتابعة الدفع
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/booking.js"></script>
+    <script src="js/linkHandler.js"></script>
+</body>
+</html> 

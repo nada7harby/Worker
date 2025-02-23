@@ -1,0 +1,54 @@
+{
+  "workers": [
+    {
+      "id": 1,
+      "name": "أحمد محمد",
+      "nationality": "مصري",
+      "age": 35,
+      "category": "سائق",
+      "experience": 8,
+      "rating": 4.8,
+      "salary": 2500,
+      "location": "الرياض",
+      "image": "worker1.jpg",
+      "skills": ["رخصة قيادة دولية", "خبرة في السيارات الفارهة"],
+      "languages": ["العربية", "الإنجليزية"],
+      "availability": true
+    },
+    {
+      "id": 2,
+      "name": "ماري جون",
+      "nationality": "فلبينية",
+      "age": 28,
+      "category": "عمالة منزلية",
+      "experience": 5,
+      "rating": 4.9,
+      "salary": 2000,
+      "location": "جدة",
+      "image": "worker2.jpg",
+      "skills": ["طبخ", "تنظيف", "رعاية أطفال"],
+      "languages": ["الإنجليزية", "العربية البسيطة"],
+      "availability": true
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "عمالة منزلية",
+      "icon": "fa-home",
+      "count": 150
+    },
+    {
+      "id": 2,
+      "name": "سائقين",
+      "icon": "fa-car",
+      "count": 80
+    },
+    {
+      "id": 3,
+      "name": "عمال مهنيين",
+      "icon": "fa-tools",
+      "count": 120
+    }
+  ]
+} 

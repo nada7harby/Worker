@@ -1,0 +1,172 @@
+:root {
+  --primary-color: #578e7e;
+  --secondary-color: #d8c4b6;
+  --success-color: #2e7d32;
+  --warning-color: #ff6d00;
+  --danger-color: #d32f2f;
+  --light-color: #f8f9fa;
+  --dark-color: #333;
+  --transition: all 0.3s ease;
+}
+
+.profile-container {
+  display: flex;
+  gap: 20px;
+}
+
+.profile-info {
+  width: 30%;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.profile-picture img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.profile-details {
+  margin-top: 20px;
+}
+
+.profile-details h3 {
+  margin: 0;
+  font-size: 24px;
+}
+
+.profile-details p {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #555;
+}
+
+.profile-update {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+}
+
+.profile-update h3 {
+  margin-top: 0;
+}
+
+.profile-update .form-label {
+  font-weight: bold;
+}
+
+.profile-update .form-control {
+  margin-bottom: 15px;
+}
+
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.settings-section {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.settings-section h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+
+.settings-section .form-label {
+  font-weight: bold;
+}
+
+.settings-section .form-control,
+.settings-section .form-select {
+  margin-bottom: 15px;
+}
+
+.settings-section .form-check {
+  margin-bottom: 10px;
+}
+
+.settings-section .btn {
+  margin-top: 10px;
+}
+
+.content{
+  text-align: right;
+}
+/* تنسيقات عامة للـ Modal */
+.modal-content {
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+  border-radius: 10px 10px 0 0;
+}
+
+.modal-title {
+  font-weight: 600;
+  color: #333;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  border-radius: 0 0 10px 10px;
+}
+
+/* تنسيقات تفاصيل الطلب */
+.details-container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.detail-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.detail-label {
+  font-weight: 600;
+  color: #555;
+}
+
+.detail-value {
+  color: #333;
+  font-weight: 500;
+}
+
+/* تنسيقات الـ Badge */
+.badge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
+
+.badge.bg-warning {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.badge.bg-success {
+  background-color: #28a745;
+  color: #fff;
+}

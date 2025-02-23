@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تصفية العمالة - منصة خدمات العمالة</title>
+    
+    <!-- Bootstrap RTL -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/search.css">
+    <link rel="stylesheet" href="css/filter.css">
+</head>
+<body>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.svg" alt="شعار المنصة" height="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link " href="./index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#services">خدماتنا</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./workers.html">العمالة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">عن المنصة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Contact-Us.html">اتصل بنا</a>
+            </li>
+          </ul>
+
+          <div class="nav-buttons">
+            <!-- إضافة أيقونة لوحة التحكم -->
+            <a href="./client-dashboard.html" class="btn btn-outline-primary me-2">
+              <i class="fas fa-tachometer-alt"></i> لوحة التحكم
+            </a>
+            <a href="./login.html" class="btn btn-outline-primary me-2"
+              >تسجيل الدخول</a
+            >
+            <a href="./register.html" class="btn btn-primary">إنشاء حساب</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-5">
+        <div class="row">
+            <!-- قسم الفلاتر -->
+            <div class="col-md-3">
+                <div class="filter-section card p-3">
+                    <h4>خيارات التصفية</h4>
+                    
+                    <!-- فلتر الجنسية -->
+                    <div class="mb-3">
+                        <label class="form-label">الجنسية</label>
+                        <select class="form-select" id="nationalityFilter">
+                            <option value="">الكل</option>
+                            <option value="مصري">مصري</option>
+                            <option value="فلبيني">فلبيني</option>
+                            <option value="هندي">هندي</option>
+                        </select>
+                    </div>
+
+                    <!-- فلتر العمر -->
+                    <div class="mb-3">
+                        <label class="form-label">العمر</label>
+                        <div class="d-flex gap-2">
+                            <input type="number" class="form-control" id="minAge" placeholder="من">
+                            <input type="number" class="form-control" id="maxAge" placeholder="إلى">
+                        </div>
+                    </div>
+
+                    <!-- فلتر الخبرة -->
+                    <div class="mb-3">
+                        <label class="form-label">سنوات الخبرة</label>
+                        <select class="form-select" id="experienceFilter">
+                            <option value="">الكل</option>
+                            <option value="1-3">1-3 سنوات</option>
+                            <option value="4-7">4-7 سنوات</option>
+                            <option value="8+">8+ سنوات</option>
+                        </select>
+                    </div>
+
+                    <!-- فلتر الراتب -->
+                    <div class="mb-3">
+                        <label class="form-label">الراتب الشهري</label>
+                        <div class="d-flex gap-2">
+                            <input type="number" class="form-control" id="minSalary" placeholder="من">
+                            <input type="number" class="form-control" id="maxSalary" placeholder="إلى">
+                        </div>
+                    </div>
+
+                    <!-- فلتر المدينة -->
+                    <div class="mb-3">
+                        <label class="form-label">المدينة</label>
+                        <select class="form-select" id="locationFilter">
+                            <option value="">الكل</option>
+                            <option value="الرياض">الرياض</option>
+                            <option value="جدة">جدة</option>
+                            <option value="الدمام">الدمام</option>
+                        </select>
+                    </div>
+
+                    <button class="btn btn-primary w-100" id="applyFilters">
+                        <i class="fas fa-filter"></i> تطبيق الفلترة
+                    </button>
+                </div>
+            </div>
+
+            <!-- قسم النتائج -->
+            <div class="col-md-9">
+                <div class="results-section">
+                    <div class="d-flex justify-content-between align-items-center mb-4">
+                        <h3>نتائج البحث</h3>
+                        <div class="sort-options">
+                            <select class="form-select" id="sortResults">
+                                <option value="rating">الأعلى تقييماً</option>
+                                <option value="salary-low">الراتب: من الأقل للأعلى</option>
+                                <option value="salary-high">الراتب: من الأعلى للأقل</option>
+                                <option value="experience">الأكثر خبرة</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- قائمة النتائج -->
+                    <div class="workers-grid" id="workersResults">
+                        <!-- سيتم ملء هذا القسم ديناميكياً بواسطة JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/linkHandler.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+<svg width="150" height="50" viewBox="0 0 150 50" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#2962ff;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#0039cb;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    <path d="M25,10 C25,5 30,5 35,10 L40,15 C45,20 45,25 40,30 L35,35 C30,40 25,40 25,35 L20,30 C15,25 15,20 20,15 Z" 
+          fill="url(#logoGradient)"/>
+    <text x="60" y="30" font-family="Cairo" font-size="20" fill="#333">خدمات العمالة</text>
+</svg> 

@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة تحكم العميل - منصة خدمات العمالة</title>
+
+    <!-- Bootstrap RTL -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/client-dashbord.css" />
+    <link rel="stylesheet" href="css/provider/dashboard.css" />
+  </head>
+  <body class="dashboard-body">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo.svg" alt="شعار المنصة" height="40" />
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="./index.html">الرئيسية</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#services">خدماتنا</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./workers.html">العمالة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./about.html">عن المنصة</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="./Contact-Us.html">اتصل بنا</a>
+            </li>
+          </ul>
+
+          <div class="nav-buttons">
+            <!-- إضافة أيقونة لوحة التحكم -->
+            <a
+              href="./client-dashboard.html"
+              class="btn btn-outline-primary me-2"
+            >
+              <i class="fas fa-tachometer-alt"></i> لوحة التحكم
+            </a>
+            <a href="./login.html" class="btn btn-outline-primary me-2"
+              >تسجيل الدخول</a
+            >
+            <a href="./register.html" class="btn btn-primary">إنشاء حساب</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Sidebar -->
+    <!-- Sidebar -->
+    <div class="dashboard-sidebar mt-5">
+      <div class="sidebar-header">
+        <i class="fas fa-users-cog"></i>
+        <h3>لوحة التحكم</h3>
+      </div>
+      <ul class="sidebar-menu">
+        <li class="" data-target="overview">
+          <a href="#overview"><i class="fas fa-home"></i> الرئيسية</a>
+        </li>
+        <li data-target="requests">
+          <a href="#requests"><i class="fas fa-tasks"></i> طلباتي</a>
+        </li>
+        <li data-target="favorites">
+          <a href="#favorites"><i class="fas fa-heart"></i> المفضلة</a>
+        </li>
+        <li data-target="messages">
+          <a href="#messages"><i class="fas fa-envelope"></i> الرسائل</a>
+        </li>
+        <li data-target="profile">
+          <a href="#profile"><i class="fas fa-user"></i> الملف الشخصي</a>
+        </li>
+        <li data-target="settings">
+          <a href="#settings"><i class="fas fa-cog"></i> الإعدادات</a>
+        </li>
+        <li>
+          <a href="#" onclick="logout()"
+            ><i class="fas fa-sign-out-alt"></i> تسجيل الخروج</a
+          >
+        </li>
+      </ul>
+    </div>
+
+    <!-- Main Content -->
+    <div class="dashboard-main" style="margin-top: 5rem !important">
+      <!-- Navbar -->
+      <nav class="dashboard-nav dashboard-header">
+        <div class="nav-left">
+          <button class="toggle-sidebar sidebar-toggle">
+            <i class="fas fa-bars"></i>
+          </button>
+          <!-- <div class="search-box header-search">
+            <input type="text" placeholder="بحث..." />
+            <i class="fas fa-search"></i>
+          </div> -->
+        </div>
+        <div class="nav-right">
+          <div class="notifications notification-btn">
+            <i class="fas fa-bell"></i>
+            <span class="badge">3</span>
+          </div>
+          <div class="user-menu user-menu-btn">
+            <img src="images/avatar.jpg" alt="صورة المستخدم" />
+            <span class="user-name">أحمد محمد</span>
+          </div>
+        </div>
+      </nav>
+
+      <!-- Content -->
+      <div class="dashboard-content">
+        <!-- Overview Section -->
+        <div class="content-section" id="overview">
+          <h2>لوحة المعلومات</h2>
+          <div class="stats-cards stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="stat-info">
+                <h3>5</h3>
+                <p>الطلبات النشطة</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-check-circle"></i>
+              </div>
+              <div class="stat-info">
+                <h3>12</h3>
+                <p>الطلبات المكتملة</p>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">
+                <i class="fas fa-heart"></i>
+              </div>
+              <div class="stat-info">
+                <h3>8</h3>
+                <p>المفضلة</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Requests -->
+          <div class="recent-requests">
+            <h3>آخر الطلبات</h3>
+            <div class="table-responsive">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>رقم الطلب</th>
+                    <th>نوع الخدمة</th>
+                    <th>تاريخ الطلب</th>
+                    <th>الحالة</th>
+                    <th>الإجراءات</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!-- سيتم ملء هذا الجزء ديناميكياً -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Section for Requests -->
+       <div class="content-section" id="requests" style="display: none">
+  <h2>طلباتي</h2>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>رقم الطلب</th>
+          <th>نوع الخدمة</th>
+          <th>تاريخ الطلب</th>
+          <th>الحالة</th>
+          <th>الإجراءات</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- سيتم ملء هذا الجزء ديناميكياً -->
+      </tbody>
+    </table>
+  </div>
+</div>
+        <!-- Modal لعرض التفاصيل -->
+        <!-- Modal لعرض التفاصيل -->
+        <div
+          class="modal fade"
+          id="detailsModal"
+          tabindex="-1"
+          aria-labelledby="detailsModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="detailsModalLabel">تفاصيل الطلب</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <div class="details-container">
+                  <!-- تفاصيل الطلب -->
+                  <div class="detail-item">
+                    <span class="detail-label">رقم الطلب:</span>
+                    <span class="detail-value" id="orderId">#1001</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">نوع الخدمة:</span>
+                    <span class="detail-value" id="serviceType"
+                      >خدمة تنظيف</span
+                    >
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">تاريخ الطلب:</span>
+                    <span class="detail-value" id="orderDate">2023-10-01</span>
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">الحالة:</span>
+                    <span class="detail-value" id="orderStatus"
+                      ><span class="badge bg-warning">قيد التنفيذ</span></span
+                    >
+                  </div>
+                  <div class="detail-item">
+                    <span class="detail-label">التفاصيل الإضافية:</span>
+                    <span class="detail-value" id="additionalDetails"
+                      >تفاصيل إضافية هنا</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  إغلاق
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Content Section for Favorites -->
+        <div class="content-section" id="favorites" style="display: none">
+          <h2>المفضلة</h2>
+          <div class="table-responsive">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>اسم العامل</th>
+                  <th>نوع الخدمة</th>
+                  <th>التقييم</th>
+                  <th>الحاله</th>
+                  <th>الإجراءات</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- الصف الأول -->
+                <tr data-worker-id="1">
+                  <td>علي أحمد</td>
+                  <td>خدمة تنظيف</td>
+                  <td>4.5</td>
+                  <td class="worker-status">
+                    <span class="badge bg-success">مفعل</span>
+                  </td>
+                  <td>
+                    <button
+                      class="btn btn-primary btn-sm"
+                      onclick="showDetails(event, '1', 'خدمة تنظيف', '4.5', 'تفاصيل العامل')"
+                    >
+                      عرض التفاصيل
+                    </button>
+                    <button
+                      class="btn btn-danger btn-sm"
+                      onclick="removeFromFavorites(event, '1')"
+                    >
+                      إزالة من المفضلة
+                    </button>
+                  </td>
+                </tr>
+
+                <!-- الصف الثاني -->
+                <tr data-worker-id="2">
+                  <td>محمد خالد</td>
+                  <td>خدمة سباكة</td>
+                  <td>4.8</td>
+                  <td class="worker-status">
+                    <span class="badge bg-success">مفعل</span>
+                  </td>
+                  <td>
+                    <button
+                      class="btn btn-primary btn-sm"
+                      onclick="showDetails(event, '2', 'خدمة سباكة', '4.8', 'تفاصيل العامل')"
+                    >
+                      عرض التفاصيل
+                    </button>
+                    <button
+                      class="btn btn-danger btn-sm"
+                      onclick="removeFromFavorites(event, '2')"
+                    >
+                      إزالة من المفضلة
+                    </button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="content-section" id="messages" style="display: none">
+          <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>الرسائل</h2>
+            <div class="d-flex gap-2">
+              <button class="btn btn-primary" onclick="composeMessage()">
+                <i class="fas fa-plus"></i> رسالة جديدة
+              </button>
+              <button
+                class="btn btn-outline-primary"
+                onclick="refreshMessages()"
+              >
+                <i class="fas fa-sync"></i> تحديث
+              </button>
+            </div>
+          </div>
+
+          <!-- فلترة الرسائل -->
+          <div class="card mb-4">
+            <div class="card-body">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label class="form-label">تصفية حسب النوع</label>
+                  <select class="form-select" id="messageTypeFilter">
+                    <option value="all">الكل</option>
+                    <option value="inbox">الوارد</option>
+                    <option value="sent">المرسلة</option>
+                    <option value="draft">المسودة</option>
+                  </select>
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">تصفية حسب التاريخ</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="messageDateFilter"
+                  />
+                </div>
+                <div class="col-md-4">
+                  <label class="form-label">بحث</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="messageSearch"
+                    placeholder="ابحث في الرسائل..."
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- قائمة الرسائل -->
+          <div class="card">
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-hover">
+                  <thead>
+                    <tr>
+                      <th>#</th>
+                      <th>المرسل</th>
+                      <th>الموضوع</th>
+                      <th>التاريخ</th>
+                      <th>الحالة</th>
+                      <th>الإجراءات</th>
+                    </tr>
+                  </thead>
+                  <tbody id="messagesTableBody">
+                    <!-- سيتم ملء هذا الجزء ديناميكياً -->
+                  </tbody>
+                </table>
+              </div>
+
+              <!-- ترقيم الصفحات -->
+              <nav class="mt-3">
+                <ul
+                  class="pagination justify-content-center"
+                  id="messagesPagination"
+                >
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#" tabindex="-1">السابق</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">التالي</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Section for Profile -->
+        <div class="content-section" id="profile" style="display: none">
+          <h2>الملف الشخصي</h2>
+          <div class="profile-container">
+            <!-- معلومات المستخدم -->
+            <div class="profile-info">
+              <div class="profile-picture">
+                <img src="images/avatar.jpg" alt="صورة المستخدم" />
+                <button class="btn btn-secondary btn-sm">تغيير الصورة</button>
+              </div>
+              <div class="profile-details">
+                <h3>أحمد محمد</h3>
+                <div class="content">
+                  <p><strong>البريد الإلكتروني:</strong> ahmed@example.com</p>
+                  <p><strong>رقم الهاتف:</strong> +966 123 456 789</p>
+                  <p><strong>تاريخ التسجيل:</strong> 2023-01-15</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- تحديث المعلومات -->
+            <div class="profile-update">
+              <h3>تحديث المعلومات</h3>
+              <form>
+                <div class="mb-3">
+                  <label for="fullName" class="form-label">الاسم الكامل</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="fullName"
+                    value="أحمد محمد"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label"
+                    >البريد الإلكتروني</label
+                  >
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    value="ahmed@example.com"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="phone" class="form-label">رقم الهاتف</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    value="+966 123 456 789"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label"
+                    >كلمة المرور الجديدة</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    placeholder="أدخل كلمة مرور جديدة"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  حفظ التغييرات
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content Section for Settings -->
+        <div class="content-section" id="settings" style="display: none">
+          <h2>الإعدادات</h2>
+          <div class="settings-container">
+            <!-- إعدادات الحساب -->
+            <div class="settings-section">
+              <h3>إعدادات الحساب</h3>
+              <form>
+                <div class="mb-3">
+                  <label for="language" class="form-label">اللغة</label>
+                  <select class="form-select" id="language">
+                    <option value="ar">العربية</option>
+                    <option value="en">الإنجليزية</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="notifications" class="form-label"
+                    >الإشعارات</label
+                  >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="emailNotifications"
+                      checked
+                    />
+                    <label class="form-check-label" for="emailNotifications"
+                      >تلقي إشعارات عبر البريد الإلكتروني</label
+                    >
+                  </div>
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="smsNotifications"
+                    />
+                    <label class="form-check-label" for="smsNotifications"
+                      >تلقي إشعارات عبر الرسائل النصية</label
+                    >
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  حفظ التغييرات
+                </button>
+              </form>
+            </div>
+
+            <!-- إعدادات الخصوصية -->
+            <div class="settings-section">
+              <h3>إعدادات الخصوصية</h3>
+              <form>
+                <div class="mb-3">
+                  <label for="profileVisibility" class="form-label"
+                    >رؤية الملف الشخصي</label
+                  >
+                  <select class="form-select" id="profileVisibility">
+                    <option value="public">عام</option>
+                    <option value="private">خاص</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="dataSharing" class="form-label"
+                    >مشاركة البيانات</label
+                  >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="shareData"
+                    />
+                    <label class="form-check-label" for="shareData"
+                      >السماح بمشاركة بياناتي مع أطراف ثالثة</label
+                    >
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  حفظ التغييرات
+                </button>
+              </form>
+            </div>
+
+            <!-- إعدادات الأمان -->
+            <div class="settings-section">
+              <h3>إعدادات الأمان</h3>
+              <form>
+                <div class="mb-3">
+                  <label for="twoFactorAuth" class="form-label"
+                    >المصادقة الثنائية</label
+                  >
+                  <div class="form-check">
+                    <input
+                      class="form-check-input"
+                      type="checkbox"
+                      id="twoFactorAuth"
+                    />
+                    <label class="form-check-label" for="twoFactorAuth"
+                      >تفعيل المصادقة الثنائية</label
+                    >
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="passwordUpdate" class="form-label"
+                    >تغيير كلمة المرور</label
+                  >
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="passwordUpdate"
+                    placeholder="أدخل كلمة المرور الجديدة"
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary">
+                  حفظ التغييرات
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/client-dashborard.js"></script>
+    <!-- <script src="js/linkHandler.js"></script> -->
+    
+    <script>
+      menuItems.forEach((item) => {
+  item.addEventListener("click", () => {
+    // إزالة الكلاس `active` من جميع العناصر
+    menuItems.forEach((menuItem) => {
+      menuItem.classList.remove("active");
+    });
+
+    // إضافة الكلاس `active` للعنصر الذي تم النقر عليه
+    item.classList.add("active");
+
+    // إخفاء كل الأقسام
+    document.querySelectorAll(".content-section").forEach((section) => {
+      section.style.display = "none";
+    });
+
+    // عرض القسم المحدد
+    const targetId = item.getAttribute("data-target");
+    const targetSection = document.getElementById(targetId);
+    if (targetSection) {
+      targetSection.style.display = "block";
+    }
+  });
+});
+    </script>
+  </body>
+</html>

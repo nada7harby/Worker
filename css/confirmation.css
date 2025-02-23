@@ -1,0 +1,254 @@
+/* Confirmation Section */
+:root {
+    --primary-color: #578e7e;
+    --primary-light: #89d7c172;
+    --secondary-color: ##c8b17e;
+    --success-color: #2e7d32;
+    --warning-color: #ff6d00;
+    --danger-color: #d32f2f;
+    --light-color: #f8f9fa;
+    --dark-color: #333;
+    --transition: all 0.3s ease;
+  }
+
+.confirmation-section {
+  padding: 120px 0 60px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
+  min-height: 100vh;
+}
+
+.confirmation-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+/* Success Icon Animation */
+.success-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 30px;
+  position: relative;
+}
+
+.success-icon i {
+  font-size: 120px;
+  color: #2e7d32;
+  filter: drop-shadow(0 4px 8px rgba(46, 125, 50, 0.3));
+}
+
+/* Success Message */
+h2 {
+  color: var(--dark-color);
+  font-size: 2rem;
+  margin-bottom: 15px;
+  animation: slideDown 0.5s ease-out 0.3s both;
+}
+
+.success-message {
+  color: #666;
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  animation: slideDown 0.5s ease-out 0.4s both;
+}
+
+/* Order Details */
+.order-details {
+  background: linear-gradient(45deg, var(--light-color), #fff);
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05);
+}
+
+.order-details h4 {
+  color: var(--dark-color);
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: right;
+}
+
+.details-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.detail-item {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 15px 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s ease;
+}
+
+.detail-item:hover {
+  transform: translateY(-3px);
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.label {
+  color: #666;
+  font-weight: 500;
+}
+
+.value {
+  color: var(--dark-color);
+  font-weight: 600;
+}
+
+/* Next Steps */
+.next-steps {
+  margin-bottom: 40px;
+  animation: fadeIn 0.5s ease-out 0.6s both;
+}
+
+.next-steps h4 {
+  color: var(--dark-color);
+  font-weight: 600;
+  margin-bottom: 25px;
+  text-align: right;
+}
+
+.steps-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.step-item {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  padding: 25px;
+  transition: all 0.3s ease;
+}
+
+.step-item:hover {
+  transform: translateX(-8px);
+  background: #fff;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.step-number {
+  transform: translate(50px, 40px);
+  width: 45px;
+  height: 45px;
+  background: linear-gradient(45deg, var(--primary-color), #436d61);
+  box-shadow: 0 4px 15px var(--primary-light);
+}
+
+.step-content {
+  text-align: right;
+}
+
+.step-content h5 {
+  color: var(--dark-color);
+  margin-bottom: 5px;
+}
+
+.step-content p {
+  color: #666;
+  margin: 0;
+}
+
+/* Control Buttons */
+.control-buttons {
+  margin-top: 40px;
+}
+
+.btn {
+  padding: 15px 35px;
+  border-radius: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+}
+
+.btn i {
+  transition: transform 0.3s ease;
+}
+
+.btn:hover i {
+  transform: translateX(5px);
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, var(--primary-color), #426c60);
+  border: none;
+  box-shadow: 0 4px 15px var(--primary-light);
+}
+
+.btn-outline-primary {
+  color: var(--primary-color);
+  border-color: var(--primary-color);
+}
+
+.btn-outline-primary:hover {
+  background: linear-gradient(45deg, var(--primary-color), #426c60);
+  border-color: transparent;
+}
+
+/* Animations */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .confirmation-section {
+    padding: 20px;
+    background: white;
+  }
+
+  .control-buttons {
+    display: none;
+  }
+
+  .confirmation-card {
+    box-shadow: none;
+    padding: 0;
+  }
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .confirmation-section {
+    padding: 100px 0 40px;
+  }
+
+  .confirmation-card {
+    padding: 20px;
+  }
+
+  .details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .control-buttons {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
